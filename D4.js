@@ -130,9 +130,23 @@ console.log(upperFirst("ciao come stai"));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function cutString(stringa) {
+    return stringa.substring(1, stringa.length - 1);
+}
+console.log(cutString("epicode"));
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function giveMeRandom(n) {
+    if (typeof n == "number") {
+        const array = [];
+        for (let i = 0; i < n; i++) {
+            array.push(Math.floor(Math.random() * 11));
+        }
+        return array;
+    } else console.log("inserisci un numero intero");
+}
+console.log(giveMeRandom(4));
