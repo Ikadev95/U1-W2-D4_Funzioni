@@ -84,11 +84,27 @@ console.log(epify(stringa));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function check3and7(numeroPositivo) {
+    if (numeroPositivo * -1 < 0 && typeof numeroPositivo == "number") {
+        if (numeroPositivo % 3 == 0 || numeroPositivo % 7 == 0) {
+            return true;
+        } else return false;
+    } else return "inserisci un numero positivo";
+}
+console.log(check3and7(3));
+
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function reverseString(stringa) {
+    const splitString = stringa.split(""); // nuovo array con una lettera per ogni elemento dell'array
+    const reverseArray = splitString.reverse(); // inverto l'array
+    let Result = reverseArray.join(""); // unisco gli elementi in una stringa
+    return Result;
+}
+console.log(reverseString("epicode"));
 
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
@@ -96,6 +112,17 @@ console.log(epify(stringa));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function upperFirst(stringa) {
+    const splitString = stringa.split(" "); // nuovo array con una parola per ogni elemento dell'array
+    console.log(splitString);
+    for (let i = 0; i < splitString.length; i++) {
+        splitString[i] = splitString[i].charAt(0).toUpperCase() + splitString[i].slice(1);
+        // charAt() per individuare la prima posizione della stringa , toUpperCase per renderla maiuscola (ritorna però solo la prima lettera maiuscola quindi vado a concatenare con il resto)
+    }
+    let ResultString = splitString.join(" "); // unisco in una stringa
+    return ResultString;
+}
+console.log(upperFirst("ciao come stai"));
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
